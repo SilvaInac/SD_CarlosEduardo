@@ -28,7 +28,7 @@ class DataLoader {
 	@Autowired
 	private NotaCompraService notaCompraService;
 	
-	@Test
+	//@Test
 	void load() {
 		//1.produto
 		Produto p1 = new Produto("Furadeira");
