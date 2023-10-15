@@ -1,11 +1,13 @@
 package br.inatel.labs.labjpa;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import br.inatel.labs.labjpa.entity.NotaCompra;
 import br.inatel.labs.labjpa.entity.NotaCompraItem;
 import br.inatel.labs.labjpa.service.NotaCompraService;
 
@@ -14,6 +16,20 @@ public class LoadingDemo {
 
 	@Autowired
 	private NotaCompraService service;
+	
+	@Test
+	public void demoLazyLoading() {
+		try {
+			NotaCompra nota = service.buscarNotaCompraPeloId(1L);
+			List<NotaCompraItem> listaNotaCompraItems = nota.getListaNotaCompraItem();
+			int nItens = listaNotaCompraItems.size();
+			System.out.println(nItens);
+		}catch (Exception e) {
+			System.out.println("O carregamento foi LAZY");
+			e.printStackTrace();
+		}
+	}
+	
 	
 	@Test
 	public void demoEagerLoading() {
