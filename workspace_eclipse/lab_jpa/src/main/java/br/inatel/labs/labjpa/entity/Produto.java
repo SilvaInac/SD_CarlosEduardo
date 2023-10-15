@@ -72,8 +72,15 @@ public class Produto {
 	public String toString() {
 		return "Produto [id=" + id + ", descricao=" + descricao + "]";
 	}
+
+	public Produto(@NotNull @Size(min = 2, max = 100) String descricao) {
+		super();
+		this.descricao = descricao;
+	}
 	
-	
+	public Produto() {
+		
+	}
 	
 	
 	
