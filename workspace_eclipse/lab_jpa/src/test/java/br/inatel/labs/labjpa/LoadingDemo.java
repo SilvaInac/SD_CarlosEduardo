@@ -18,6 +18,24 @@ public class LoadingDemo {
 	private NotaCompraService service;
 	
 	@Test
+	public void demoPlanejandoConsulta()
+	{
+		try {
+			NotaCompra nota = service.buscarNotaCompraItemPeloIdComListaItem(1L);
+			List<NotaCompraItem> listaNotaCompraItem = nota.getListaNotaCompraItem();
+			
+			for(NotaCompraItem item : listaNotaCompraItem) {
+				System.out.println(item);
+			}
+			
+			System.out.println("Se chegou até aqui, o planejamento da consulta funcionou");
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
 	public void demoLazyLoading() {
 		try {
 			NotaCompra nota = service.buscarNotaCompraPeloId(1L);
