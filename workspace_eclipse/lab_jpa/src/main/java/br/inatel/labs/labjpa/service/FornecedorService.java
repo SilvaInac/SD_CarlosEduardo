@@ -28,8 +28,14 @@ public class FornecedorService {
 	
 	public List<Fornecedor> listar(){
 		String jpql = "select f from Fornecedor f";
-		List.createQuery(jpql,Fornecedor.class)
+		List<Fornecedor> fornecedores= em.createQuery(jpql,Fornecedor.class)
 			.getResultList();
-		return 
+		return fornecedores;
+	}
+	
+	public void remover(Fornecedor f) {
+		f = em.merge(f);
+		em.remove(f);
+		
 	}
 }

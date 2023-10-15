@@ -91,8 +91,16 @@ public class NotaCompra {
 	public String toString() {
 		return "NotaCompra [id=" + id + ", dataEmissao=" + dataEmissao + "]";
 	}
+
+	public NotaCompra(@NotNull @Past LocalDate dataEmissao, Fornecedor fornecedor) {
+		super();
+		this.dataEmissao = dataEmissao;
+		this.fornecedor = fornecedor;
+	}
 	
 	
-	
+	public NotaCompra() {
+		// TODO Auto-generated constructor stub
+	}
 
 }

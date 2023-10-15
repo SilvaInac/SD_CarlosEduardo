@@ -70,6 +70,15 @@ public class Fornecedor {
 	public String toString() {
 		return "Fornecedor [id=" + id + ", razaoSocial=" + razaoSocial + "]";
 	}
+
+	public Fornecedor(@NotNull @Size(min = 2, max = 200) String razaoSocial) {
+		super();
+		this.razaoSocial = razaoSocial;
+	}
+	
+	public Fornecedor() {
+		// TODO Auto-generated constructor stub
+	}
 	
 
 	

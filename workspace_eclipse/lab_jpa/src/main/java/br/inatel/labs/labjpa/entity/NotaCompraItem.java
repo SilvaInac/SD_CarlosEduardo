@@ -98,6 +98,19 @@ public class NotaCompraItem {
 		return "NotaCompraItem [id=" + id + ", valorCompraProduto=" + valorCompraProduto + ", quantidade=" + quantidade
 				+ "]";
 	}
+
+	public NotaCompraItem(NotaCompra notaCompra, Produto produto, @NotNull @Positive BigDecimal valorCompraProduto,
+			@NotNull @Positive Integer quantidade) {
+		super();
+		this.notaCompra = notaCompra;
+		this.produto = produto;
+		this.valorCompraProduto = valorCompraProduto;
+		this.quantidade = quantidade;
+	}
+	
+	public NotaCompraItem() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 
