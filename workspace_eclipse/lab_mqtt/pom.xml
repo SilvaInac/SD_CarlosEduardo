@@ -23,6 +23,11 @@
 			<version>1.2.5</version>
 		</dependency>
 
+		<dependency>
+			<groupId>br.inatel.labs</groupId>
+			<artifactId>lab_rest_server</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
